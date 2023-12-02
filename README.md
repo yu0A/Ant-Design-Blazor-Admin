@@ -33,3 +33,6 @@ $ dotnet publish -c release -o dist<br>
 [ASP .Net Core](https://docs.microsoft.com/aspnet/)<br><br>
 [Blazor](https://dotnet.microsoft.com/en-us/apps/aspnet/web-apps/blazor)<br><br>
 [Ant Design Blazor](https://github.com/ant-design-blazor/ant-design-blazor)
+---
+# 鸣谢
+感谢 [@xiaoMan](https://github.com/ant-design-blazor/ant-design-blazor) 提供的"antb"logo
