@@ -1,3 +1,4 @@
+![screenshot1](https://github.com/yu0A/Ant-Design-Blazor-Admin/blob/master/Ant-Design-Blazor-Admin/Shared/Logo/logo.png)<br><br>
 # Ant Design Blazor Admin
 ---
 这是一套基于Ant Design Blazor的Admin代码。<br>
