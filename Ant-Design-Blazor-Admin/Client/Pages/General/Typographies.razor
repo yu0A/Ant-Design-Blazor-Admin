@@ -1,0 +1,155 @@
+﻿@page "/Typographies"
+
+@code {
+    // Typographies
+}
+<div>
+    <Button Type="@ButtonType.Text">Typography 排版</Button>
+</div>
+
+<Divider />
+<div>
+    <Title Level="1">Introduction</Title>
+    <Paragraph>In the process of internal desktop applications development, many different design specs and implementations would be involved, which might cause designers and developers difficulties and duplication and reduce the efficiency of development.</Paragraph>
+    <Paragraph>
+        After massive project practice and summaries, Ant Design, a design language for background applications, is refined by Ant UED Team, which aims to
+        <Text Strong>
+            uniform the user interface specs for internal background projects, lower the unnecessary cost of design differences and implementation and liberate the resources of design and front-end development.
+        </Text>
+    </Paragraph>
+    <Title Level="2">Guildelines and Resources</Title>
+    <Paragraph>
+        We supply a series of design principles, practical patterns and high quality design resources
+        (<Text Code>Sketch</Text> and <Text Code>Axure</Text>), to help people create their product
+        prototypes beautifully and efficiently.
+    </Paragraph>
+    <Paragraph>
+        <ul>
+            <li>
+                <a href="/docs/spec/proximity">Principles</a>
+            </li>
+            <li>
+                <a href="/docs/pattern/navigation">Patterns</a>
+            </li>
+            <li>
+                <a href="/docs/resource/download">Resource Download</a>
+            </li>
+        </ul>
+    </Paragraph>
+
+    <Divider />
+
+    <Title>介绍</Title>
+    <Paragraph>
+        蚂蚁的企业级产品是一个庞大且复杂的体系。这类产品不仅量级巨大且功能复杂，而且变动和并发频繁，常常需要设计与开发能够快速的做出响应。同时这类产品中有存在很多类似的页面以及组件，可以通过抽象得到一些稳定且高复用性的内容。
+    </Paragraph>
+    <Paragraph>
+        随着商业化的趋势，越来越多的企业级产品对更好的用户体验有了进一步的要求。带着这样的一个终极目标，我们（蚂蚁金服体验技术部）经过大量的项目实践和总结，逐步打磨出一个服务于企业级产品的设计体系
+        Ant Design。基于<Text Mark>『确定』和『自然』</Text>
+        的设计价值观，通过模块化的解决方案，降低冗余的生产成本，让设计者专注于
+        <Text Strong>更好的用户体验</Text>。
+    </Paragraph>
+    <Title Level="2">设计资源</Title>
+    <Paragraph>
+        我们提供完善的设计原则、最佳实践和设计资源文件（<Text Code>Sketch</Text> 和
+        <Text Code>Axure</Text>），来帮助业务快速设计出高质量的产品原型。
+    </Paragraph>
+
+    <Paragraph>
+        <ul>
+            <li>
+                <a href="/docs/spec/proximity">设计原则</a>
+            </li>
+            <li>
+                <a href="/docs/pattern/navigation">设计模式</a>
+            </li>
+            <li>
+                <a href="/docs/resource/download">设计资源</a>
+            </li>
+        </ul>
+    </Paragraph>
+
+</div>
+<Divider />
+<div>
+    <Title Level="1">h1. Ant Design 标题一</Title>
+    <Title Level="2">h2. Ant Design 标题二</Title>
+    <Title Level="3">h3. Ant Design 标题三</Title>
+    <Title Level="4">h4. Ant Design 标题四</Title>
+
+</div>
+<Divider />
+<div>
+    <Text>Ant Design</Text>
+    <br />
+    <Text Type="secondary">Ant Design</Text>
+    <br />
+    <Text Type="success">Ant Design</Text>
+    <br />
+    <Text Type="warning">Ant Design</Text>
+    <br />
+    <Text Type="danger">Ant Design</Text>
+    <br />
+    <Text Disabled>Ant Design</Text>
+    <br />
+    <Text Mark>Ant Design</Text>
+    <br />
+    <Text Code>Ant Design</Text>
+    <br />
+    <Text Keyboard>Ant Design</Text>
+    <br />
+    <Text Underline>Ant Design</Text>
+    <br />
+    <Text Delete>Ant Design</Text>
+    <br />
+    <Text Strong>Ant Design</Text>
+</div>
+<Divider />
+<Paragraph Editable EditConfig="editableStr">@editableStr.Text</Paragraph>
+ <Paragraph Editable EditConfig="editableStrWithSuffix">@editableStrWithSuffix.Text</Paragraph>
+ <Paragraph Editable EditConfig="customIconStr">@customIconStr.Text</Paragraph>
+ <Paragraph Editable EditConfig="customEnterIconStr">@customEnterIconStr.Text</Paragraph>
+ <Paragraph Editable EditConfig="clickTriggerStr">@clickTriggerStr.Text</Paragraph>
+ <Paragraph Editable EditConfig="noEnterIconStr">@noEnterIconStr.Text</Paragraph>
+ <Paragraph Editable EditConfig="lengthLimitedStr">@lengthLimitedStr.Text</Paragraph>
+
+ <Title Level="1" Editable EditConfig="h1">@h1.Text</Title>
+ <Title Level="2" Editable EditConfig="h2">@h2.Text</Title>
+ <Title Level="3" Editable EditConfig="h3">@h3.Text</Title>
+ <Title Level="4" Editable EditConfig="h4">@h4.Text</Title>
+
+ <Divider />
+
+ <Paragraph Copyable>Simple copyable text</Paragraph>
+<Paragraph Copyable CopyConfig="@selfDefinedText">Copy a self defiend text</Paragraph>
+ <Paragraph Copyable CopyConfig="@selfDefinedCopy">在控制台中查看此文本的log</Paragraph>
+ <Title Copyable>可复制的标题</Title>
+<Paragraph>不可复制的段落中穿插着<Text Strong Copyable>可复制的文字</Text>以及其他</Paragraph>
+
+@code
+{
+    public TypographyCopyableConfig selfDefinedText = new() { Text = "Just copied from self defined text" };
+    public TypographyCopyableConfig selfDefinedCopy = new() { OnCopy = () => System.Console.WriteLine("Log in console as a self defined copy behavior") };
+
+    TypographyEditableConfig editableStr = new() { Text = "This is an editable text." };
+    TypographyEditableConfig editableStrWithSuffix = new() { Text = "This is a loooooooooooooooooooooooooooooooong editable text with suffix." };
+    TypographyEditableConfig customIconStr = new() { Text = "Custom Edit icon and replace tooltip text." };
+    TypographyEditableConfig clickTriggerStr = new() { Text = "Text or icon as trigger - click to start editing." };
+    TypographyEditableConfig customEnterIconStr = new() { Text = "Editable text with a custom enter icon in edit field." };
+    TypographyEditableConfig noEnterIconStr = new() { Text = "Editable text with no enter icon in edit field." };
+    TypographyEditableConfig lengthLimitedStr = new() { Text = "This is an editable text with limited length." };
+
+    TypographyEditableConfig h1 = new() { Text = "h1. Ant Design" };
+    TypographyEditableConfig h2 = new() { Text = "h2. Ant Design" };
+    TypographyEditableConfig h3 = new() { Text = "h3. Ant Design" };
+    TypographyEditableConfig h4 = new() { Text = "h4. Ant Design" };
+
+}
+<Divider />
+<div>
+    To do
+</div>
+<Divider />
+<div>
+    To do
+</div>

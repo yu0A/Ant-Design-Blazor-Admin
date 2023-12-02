@@ -1,0 +1,76 @@
+﻿@page "/Paginations"
+
+@code {
+    // Paginations
+}
+<div>
+    <Button Type="@ButtonType.Text">Pagination 分页</Button>
+</div>
+<Divider />
+<Pagination PageIndex="1" Total="50"></Pagination>
+<Divider />
+<Pagination DefaultCurrent="6" Total="500" />
+<Divider />
+<Pagination ShowSizeChanger
+             OnShowSizeChange="OnShowSizeChange"
+             DefaultCurrent="3"
+             Total="500" />
+ <br />
+ <Divider />
+ <Pagination ShowSizeChanger
+             OnShowSizeChange="OnShowSizeChange"
+             DefaultCurrent="3"
+             Total="500"
+            Disabled />
+
+ @code {
+
+    private void OnShowSizeChange(PaginationEventArgs args)
+    {
+        var (current, pageSize) = args;
+        Console.WriteLine($"{current}, {pageSize}");
+    }
+
+}
+<Divider />
+<div>
+    <Pagination ShowQuickJumper DefaultCurrent="2" Total="500" OnChange="OnChange" />
+     <br />
+     <Pagination ShowQuickJumper DefaultCurrent="2" Total="500" OnChange="OnChange" Disabled />
+ </div>
+ @code {
+
+    void OnChange(PaginationEventArgs args)
+    {
+        Console.WriteLine($"Page: {args.Page}");
+    }
+
+}
+<Divider />
+<div>
+    <ant_blazor.Pages.Navi.Paginations_.Paginations1></ant_blazor.Pages.Navi.Paginations_.Paginations1>
+</div>
+<Divider />
+<div>
+    <ant_blazor.Pages.Navi.Paginations_.Paginations2></ant_blazor.Pages.Navi.Paginations_.Paginations2>
+</div>
+<Divider />
+<div>
+    <ant_blazor.Pages.Navi.Paginations_.Paginations3></ant_blazor.Pages.Navi.Paginations_.Paginations3>
+</div>
+<Divider />
+<div>
+    <ant_blazor.Pages.Navi.Paginations_.Paginations4></ant_blazor.Pages.Navi.Paginations_.Paginations4>
+</div>
+<Divider />
+<div>
+    <ant_blazor.Pages.Navi.Paginations_.Paginations5></ant_blazor.Pages.Navi.Paginations_.Paginations5>
+</div>
+<Divider />
+<div>
+    <ant_blazor.Pages.Navi.Paginations_.Paginations6></ant_blazor.Pages.Navi.Paginations_.Paginations6>
+</div>
+<Divider />
+<div>
+    <ant_blazor.Pages.Navi.Paginations_.Paginations7></ant_blazor.Pages.Navi.Paginations_.Paginations7>
+</div>

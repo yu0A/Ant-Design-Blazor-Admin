@@ -1,0 +1,76 @@
+﻿<Menu Style="width: 256px;"
+      DefaultSelectedKeys=@(new[] { "1" })
+      DefaultOpenKeys=@(new[] { "sub0","sub1","sub2","sub3","sub4" })
+      Mode=@MenuMode.Inline>
+    <SubMenu Key="sub0" TitleTemplate=@sub0Title>
+        <MenuItem RouterLink="/" RouterMatch="NavLinkMatch.All">Index</MenuItem>
+    </SubMenu>
+    <SubMenu Key="sub1" TitleTemplate=@sub1Title>
+        <MenuItemGroup Key="g1" Title="Components">
+            <MenuItem RouterLink="/Buttons" RouterMatch="NavLinkMatch.All">Buttons</MenuItem>
+            <MenuItem RouterLink="/Icons" RouterMatch="NavLinkMatch.All">Icons</MenuItem>
+            <MenuItem RouterLink="/Typographies" RouterMatch="NavLinkMatch.All">Typographies</MenuItem>
+        </MenuItemGroup>
+    </SubMenu>
+    <SubMenu Key="sub2" TitleTemplate=@sub2Title>
+        <MenuItemGroup Key="g2" Title="Components">
+            <MenuItem RouterLink="/Dividers" RouterMatch="NavLinkMatch.All">Dividers</MenuItem>
+            <MenuItem RouterLink="/Grids" RouterMatch="NavLinkMatch.All">Grids</MenuItem>
+            <MenuItem RouterLink="/Layouts" RouterMatch="NavLinkMatch.All">Layouts</MenuItem>
+            <MenuItem RouterLink="/Spaces" RouterMatch="NavLinkMatch.All">Spaces</MenuItem>
+        </MenuItemGroup>
+    </SubMenu>
+    <SubMenu Key="sub3" TitleTemplate=@sub3Title>
+        <MenuItemGroup Key="g3" Title="Components">
+            <MenuItem RouterLink="/Affixies" RouterMatch="NavLinkMatch.All">Affixies</MenuItem>
+            <MenuItem RouterLink="/Breadcrumbs" RouterMatch="NavLinkMatch.All">Breadcrumbs</MenuItem>
+            <MenuItem RouterLink="/Dropdowns" RouterMatch="NavLinkMatch.All">Dropdowns</MenuItem>
+            <MenuItem RouterLink="/Menus" RouterMatch="NavLinkMatch.All">Menus</MenuItem>
+            <MenuItem RouterLink="/PageHeaders" RouterMatch="NavLinkMatch.All">PageHeaders</MenuItem>
+            <MenuItem RouterLink="/Paginations" RouterMatch="NavLinkMatch.All">Paginations</MenuItem>
+            <MenuItem RouterLink="/Stepss" RouterMatch="NavLinkMatch.All">Stepss</MenuItem>
+        </MenuItemGroup>
+    </SubMenu>
+    <SubMenu Key="sub4" TitleTemplate=@sub4Title>
+        <MenuItemGroup Key="g4" Title="Components">
+            <MenuItem RouterLink="/AutoCompletes" RouterMatch="NavLinkMatch.All">AutoCompletes</MenuItem>
+            <MenuItem RouterLink="/Cascaders" RouterMatch="NavLinkMatch.All">Cascaders</MenuItem>
+            <MenuItem RouterLink="/Checkboxs" RouterMatch="NavLinkMatch.All">Checkboxs</MenuItem>
+            <MenuItem RouterLink="/DatePickers" RouterMatch="NavLinkMatch.All">DatePickers</MenuItem>
+            <MenuItem RouterLink="/Forms" RouterMatch="NavLinkMatch.All">Forms</MenuItem>
+            <MenuItem RouterLink="/Inputs" RouterMatch="NavLinkMatch.All">Inputs</MenuItem>
+            
+            
+        </MenuItemGroup>
+    </SubMenu>
+
+</Menu>
+
+@code
+{
+    RenderFragment sub0Title =
+    @<span>
+        <Icon Type="home" Theme="outline" />
+        <span>Home</span>
+    </span>;
+    RenderFragment sub1Title =
+    @<span>
+        <Icon Type="mail" Theme="outline"></Icon>
+        <span>General</span>
+    </span>;
+    RenderFragment sub2Title =
+    @<span>
+        <Icon Type="medicine-box" Theme="outline" />
+        <span>Layout</span>
+    </span>;
+    RenderFragment sub3Title =
+    @<span>
+        <Icon Type="plus-circle" Theme="outline" />
+        <span>Navigation</span>
+    </span>;
+    RenderFragment sub4Title =
+    @<span>
+        <Icon Type="snippets" Theme="outline" />
+        <span>Data Input</span>
+    </span>;
+}

@@ -1,0 +1,89 @@
+﻿@page "/Breadcrumbs"
+
+@code {
+    // Breadcrumbs
+}
+<div>
+    <Button Type="@ButtonType.Text">Breadcrumb 面包屑</Button>
+</div>
+@inject IMessageService _message;
+
+<Divider />
+<Breadcrumb>
+    <BreadcrumbItem>Home</BreadcrumbItem>
+    <BreadcrumbItem Href="">Application Center</BreadcrumbItem>
+    <BreadcrumbItem OnClick="@OnClickItem" Href="">Application List</BreadcrumbItem>
+    <BreadcrumbItem>An Application</BreadcrumbItem>
+    <BreadcrumbItem OnClick="@OnClickItem">A Page</BreadcrumbItem>
+</Breadcrumb>
+
+@code {
+    public void OnClickItem(MouseEventArgs args)
+    {
+        _message.Success($"You clicked the breadcrumb.");
+    }
+}
+<Divider />
+<Breadcrumb>
+    <BreadcrumbItem Href="">
+        <Icon Type="home" />
+    </BreadcrumbItem>
+    <BreadcrumbItem Href="">
+        <Icon Type="user" />
+        <span>Application List</span>
+    </BreadcrumbItem>
+    <BreadcrumbItem>
+        Application
+    </BreadcrumbItem>
+</Breadcrumb>
+<Divider />
+<div>
+    <Breadcrumb RouteLabel="">
+        <BreadcrumbItem>
+            Home
+        </BreadcrumbItem>
+        <BreadcrumbItem>
+            <a>Application List</a>
+        </BreadcrumbItem>
+        <BreadcrumbItem>
+            An Application
+        </BreadcrumbItem>
+    </Breadcrumb>
+</div>
+<Divider />
+<Breadcrumb Separator=">">
+    <BreadcrumbItem>Home</BreadcrumbItem>
+    <BreadcrumbItem Href="">Application Center</BreadcrumbItem>
+    <BreadcrumbItem Href="">Application List</BreadcrumbItem>
+    <BreadcrumbItem>An Application</BreadcrumbItem>
+</Breadcrumb>
+<Divider />
+<Breadcrumb>
+    <BreadcrumbItem>
+        Ant Design Blazor
+    </BreadcrumbItem>
+    <BreadcrumbItem>
+        <a>Component</a>
+    </BreadcrumbItem>
+    <BreadcrumbItem>
+        <ChildContent>
+            <a>General</a>
+        </ChildContent>
+        <Overlay>
+            <Menu>
+                <MenuItem>
+                    <a>General</a>
+                </MenuItem>
+                <MenuItem>
+                    <a>Layout</a>
+                </MenuItem>
+                <MenuItem>
+                    <a>Navigation</a>
+                </MenuItem>
+            </Menu>
+        </Overlay>
+    </BreadcrumbItem>
+    <BreadcrumbItem>
+        Button
+    </BreadcrumbItem>
+</Breadcrumb>

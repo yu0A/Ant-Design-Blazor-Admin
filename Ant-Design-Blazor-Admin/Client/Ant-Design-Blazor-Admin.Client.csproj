@@ -1,0 +1,40 @@
+<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <ServiceWorkerAssetsManifest>service-worker-assets.js</ServiceWorkerAssetsManifest>
+    <AssemblyName>$(AssemblyName.Replace(' ', '_'))</AssemblyName>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="Pages\Counter.razor" />
+    <None Include="Pages\FetchData.razor" />
+    <None Include="Pages\Index.razor" />
+    <None Include="Shared\MainLayout.razor" />
+    <None Include="Shared\NavMenu.razor" />
+    <None Include="Shared\SurveyPrompt.razor" />
+    <None Include="wwwroot\css\bootstrap\bootstrap.min.css.map" />
+    <None Include="wwwroot\css\open-iconic\FONT-LICENSE" />
+    <None Include="wwwroot\css\open-iconic\font\fonts\open-iconic.svg" />
+    <None Include="wwwroot\css\open-iconic\ICON-LICENSE" />
+    <None Include="wwwroot\css\open-iconic\README.md" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AntDesign" Version="0.16.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="7.0.12" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="7.0.12" PrivateAssets="all" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Shared\Ant-Design-Blazor-Admin.Shared.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ServiceWorker Include="wwwroot\service-worker.js" PublishedContent="wwwroot\service-worker.published.js" />
+  </ItemGroup>
+
+</Project>

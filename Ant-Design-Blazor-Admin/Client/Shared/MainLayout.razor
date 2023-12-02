@@ -1,0 +1,57 @@
+﻿@inject IJSRuntime JSRuntime
+@inherits LayoutComponentBase
+
+<Layout>
+    <Header Class="header">
+        <div class="logo" />
+        <Menu Theme="MenuTheme.Dark" Mode="MenuMode.Horizontal" DefaultSelectedKeys=@(new []{"1"})>
+            <MenuItem Key="1" OnClick=GoToAspNet>
+                Asp .Net
+            </MenuItem>
+            <MenuItem Key="2" OnClick=GoToBlazor>
+                Blazor
+            </MenuItem>
+            <MenuItem Key="3" OnClick=GoToAntDesignBlazor>
+                Ant Design Blazor
+            </MenuItem>
+        </Menu>
+    </Header>
+    <Content Style="padding: 0 0">
+        <Layout Class="site-layout-background" Style="margin: 24px 0;">
+            <Sider Class="site-layout-background" Width="200">
+                <AntDesignMenu></AntDesignMenu>
+            </Sider>
+            <Content Style="padding:20px 80px; min-height: 280px;">@Body</Content>
+        </Layout>
+    </Content>
+    <Footer Style="text-align: center; ">Ant Design Blazor Admin ©2023 yuhongbo</Footer>
+</Layout>
+
+@code{
+    private async Task GoToAspNet()
+    {
+        await JSRuntime.InvokeVoidAsync("exportJsFunctions.GoToAspNet");
+    }
+    private async Task GoToBlazor()
+    {
+        await JSRuntime.InvokeVoidAsync("exportJsFunctions.GoToBlazor");
+    }
+    private async Task GoToAntDesignBlazor()
+    {
+        await JSRuntime.InvokeVoidAsync("exportJsFunctions.GoToAntDesignBlazor");
+    }
+}
+
+<style>
+    #components-layout-demo-top-side .logo {
+        width: 120px;
+        height: 31px;
+        background: rgba(255, 255, 255, 0.2);
+        margin: 16px 28px 16px 0;
+        float: left;
+    }
+
+    .site-layout-background {
+        background: #fff;
+    }
+</style>

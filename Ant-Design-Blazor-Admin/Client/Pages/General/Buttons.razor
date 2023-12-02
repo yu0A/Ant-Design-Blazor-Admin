@@ -1,0 +1,174 @@
+﻿@page "/Buttons"
+
+@code {
+    // Buttons
+}
+<div>
+    <Button Type="@ButtonType.Text">Button 按钮</Button>
+</div>
+
+
+<Divider />
+<div>
+    <Button Type="@ButtonType.Primary">Primary</Button>
+    <Button>Default</Button>
+    <Button Type="@ButtonType.Dashed">Dashed</Button>
+    <Button Type="@ButtonType.Text">Text</Button>
+    <Button Type="@ButtonType.Link">Link</Button>
+</div>
+
+<Divider />
+<div>
+    <Tooltip Title="@IconType.Outline.Search">
+        <Button Type="@ButtonType.Primary" Shape="@ButtonShape.Circle" Icon="@IconType.Outline.Search" />
+    </Tooltip>
+    <Button Type="@ButtonType.Primary" Shape="@ButtonShape.Circle">A</Button>
+    <Button Type="@ButtonType.Primary" Icon="@IconType.Outline.Search">Search</Button>
+    <Tooltip Title="@IconType.Outline.Search">
+        <Button Shape="@ButtonShape.Circle" Icon="@IconType.Outline.Search" />
+    </Tooltip>
+    <Button Icon="@IconType.Outline.Search">Search</Button>
+
+    <br />
+
+    <Tooltip Title="@IconType.Outline.Search">
+        <Button Shape="@ButtonShape.Circle" Icon="@IconType.Outline.Search" />
+    </Tooltip>
+    <Button Icon="@IconType.Outline.Search">Search</Button>
+    <Tooltip Title="@IconType.Outline.Search">
+        <Button Type="@ButtonType.Dashed" Shape="@ButtonShape.Circle" Icon="@IconType.Outline.Search" />
+    </Tooltip>
+    <Button Type="@ButtonType.Dashed" Icon="@IconType.Outline.Search">Search</Button>
+</div>
+
+<Divider />
+<div>
+    <Button Type="@ButtonType.Primary" Loading>Loading</Button>
+    <Button Type="@ButtonType.Primary" Size="@ButtonSize.Small" Loading>Loading</Button>
+    <Button Type="@ButtonType.Primary" Icon="@IconType.Outline.Poweroff" Loading />
+
+     <br />
+
+     <Button Type="@ButtonType.Primary"
+             Loading="_noIconLoading"
+             OnClick="EnterNoIconLoading">
+         Click me!
+     </Button>
+     <Button Type="@ButtonType.Primary"
+             Icon="@IconType.Outline.Poweroff"
+             Loading="_withIconLoading"
+             OnClick="EnterWithIconLoading">
+         Click me!
+     </Button>
+     <Button Type="@ButtonType.Primary"
+             Icon="@IconType.Outline.Poweroff"
+             Loading="_onlyIconLoading"
+             OnClick="EnterOnlyIconLoading" />
+ </div>
+
+ @code
+ {
+    private bool _noIconLoading;
+    private bool _withIconLoading;
+    private bool _onlyIconLoading;
+
+    private async Task EnterNoIconLoading()
+    {
+        _noIconLoading = true;
+        await Task.Delay(8000);
+        _noIconLoading = false;
+    }
+
+    private async Task EnterWithIconLoading()
+    {
+        _withIconLoading = true;
+        await Task.Delay(8000);
+        _withIconLoading = false;
+    }
+
+    private async Task EnterOnlyIconLoading()
+    {
+        _onlyIconLoading = true;
+        await Task.Delay(8000);
+        _onlyIconLoading = false;
+    }
+}
+
+<Divider />
+<div>
+    <Button Type="@ButtonType.Primary">Primary</Button>
+    <Button Type="@ButtonType.Primary" Disabled>Primary (disabled)</Button>
+    <br />
+    <Button>Default</Button>
+    <Button Disabled>Default (disabled)</Button>
+    <br />
+    <Button Type="@ButtonType.Dashed">Dashed</Button>
+    <Button Type="@ButtonType.Dashed" Disabled>Dashed (disabled)</Button>
+    <br />
+    <Button Type="@ButtonType.Text">Text</Button>
+    <Button Type="@ButtonType.Text" Disabled>Text (disabled)</Button>
+    <br />
+    <Button Type="@ButtonType.Link">Link</Button>
+    <Button Type="@ButtonType.Link" Disabled>Link (disabled)</Button>
+    <br />
+    <Button Type="@ButtonType.Link" Danger>Danger Link</Button>
+    <Button Type="@ButtonType.Link" Danger Disabled>Danger Link (disabled)</Button>
+    <br />
+    <Button Danger>Danger Default</Button>
+    <Button Danger Disabled>Danger Default (disabled)</Button>
+    <br />
+    <Button Type="@ButtonType.Text" Danger>Danger Text</Button>
+    <Button Type="@ButtonType.Text" Danger Disabled>Danger Text (disabled)</Button>
+    <br />
+    <Button Type="@ButtonType.Link" Danger>Danger Link</Button>
+    <Button Type="@ButtonType.Link" Danger Disabled>Danger Link (disabled)</Button>
+    <div class="site-Button-Ghost-wrapper">
+        <Button Ghost>Ghost</Button>
+        <Button Ghost Disabled>Ghost (disabled)</Button>
+    </div>
+</div>
+
+<Divider />
+<div>
+    <Button Type="@ButtonType.Primary" Loading>Loading</Button>
+    <Button Type="@ButtonType.Primary" Size="@ButtonSize.Small" Loading>Loading</Button>
+    <Button Type="@ButtonType.Primary" Icon="@IconType.Outline.Poweroff" Loading />
+
+     <br />
+
+     <Button Type="@ButtonType.Primary"
+             Loading="_noIconLoading"
+             OnClick="EnterNoIconLoading">
+         Click me!
+     </Button>
+     <Button Type="@ButtonType.Primary"
+             Icon="@IconType.Outline.Poweroff"
+             Loading="_withIconLoading"
+             OnClick="EnterWithIconLoading">
+         Click me!
+     </Button>
+     <Button Type="@ButtonType.Primary"
+             Icon="@IconType.Outline.Poweroff"
+             Loading="_onlyIconLoading"
+             OnClick="EnterOnlyIconLoading" />
+ </div>
+
+ <Divider />
+ <div id="button-block-demo">
+     <Button Type="@ButtonType.Primary" Block>Primary</Button>
+    <Button Block>Default</Button>
+    <Button Type="@ButtonType.Dashed" Block>Dashed</Button>
+    <Button Type="@ButtonType.Link" Block>Link</Button>
+</div>
+
+<style>
+    #button-block-demo > * {
+        margin-bottom: 12px;
+    }
+</style>
+
+<Divider />
+<div>
+    <DownloadButton Type="@ButtonType.Primary" Icon="@IconType.Outline.Download" Url="docs/assets/logo.svg" FileName="antblazor_logo" />
+    <DownloadButton Type="@ButtonType.Primary" Icon="@IconType.Outline.Download" Url="docs/assets/logo.svg" FileName="antblazor_logo">Download</DownloadButton>
+</div>

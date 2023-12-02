@@ -1,0 +1,79 @@
+﻿@page "/Affixies"
+
+@code {
+    // Affixies
+}
+<div>
+    <Button Type="@ButtonType.Text">Affix 固钉</Button>
+</div>
+
+<Divider />
+<div>
+    <Affix OffsetTop="@_offsetTop">
+        <Button Type="@ButtonType.Primary" OnClick="AddTop">
+            Affix top
+        </Button>
+    </Affix>
+    <br />
+    <Affix OffsetBottom="@_offsetBottom">
+        <Button Type="@ButtonType.Primary" OnClick="AddBottom">
+            Affix bottom
+        </Button>
+    </Affix>
+</div>
+
+
+@code
+{
+    private int _offsetTop = 10;
+    private int _offsetBottom = 10;
+
+    private void AddTop()
+    {
+        _offsetTop += 10;
+    }
+
+    private void AddBottom()
+    {
+        _offsetBottom += 10;
+    }
+}
+<Divider />
+<div>
+    <Affix OffsetTop="120" OnChange="OnAffixChange">
+        <Button>
+            120px to affix top
+        </Button>
+    </Affix>
+</div>
+
+@code {
+    private void OnAffixChange(bool affixed)
+    {
+        Console.WriteLine(affixed);
+    }
+
+}
+<Divider />
+<div class="scrollable-container" id="scrollable-container">
+    <div class="background">
+        <Affix TargetSelector="#scrollable-container">
+            <Button Type="@ButtonType.Primary">
+                Fixed at the top of container
+            </Button>
+        </Affix>
+    </div>
+</div>
+
+<style>
+    .scrollable-container {
+        height: 100px;
+        overflow-y: scroll;
+    }
+
+    .background {
+        padding-top: 60px;
+        height: 300px;
+        background-image: url("https://zos.alipayobjects.com/rmsportal/RmjwQiJorKyobvI.jpg")
+    }
+</style>

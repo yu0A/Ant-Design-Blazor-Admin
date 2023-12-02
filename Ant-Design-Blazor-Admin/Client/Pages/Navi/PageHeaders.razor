@@ -1,0 +1,275 @@
+﻿@page "/PageHeaders"
+
+@code {
+    // PageHeaders
+}
+<div>
+    <Button Type="@ButtonType.Text">PageHeader 页头</Button>
+</div>
+<Divider />
+<PageHeader Class="site-page-header" Title="@_title" Subtitle="This is a subtitle" />
+<br />
+<Divider />
+<PageHeader Class="site-page-header" Title="@_title" Subtitle="Custom `OnBack` callback" OnBack="@(()=> { Console.WriteLine("OnBack");})" />
+<br />
+<Divider />
+<PageHeader Class="site-page-header" Title="@_title" Subtitle="Custom Icon" BackIcon="@("backward")" />
+<br />
+<Divider />
+<PageHeader Class="site-page-header" Title="@_title" Subtitle="Custom Icon and `OnBack` callback" BackIconTemplate="icon" OnBack="@(()=> { Console.WriteLine("OnBack");})" />
+@code{
+    private string _title = "Title";
+
+    RenderFragment icon =@<Icon Type="backward" />;
+}
+<Divider />
+<div class="site-page-header-ghost-wrapper">
+    <PageHeader BackIcon="true" Ghost="false">
+        <PageHeaderTitle>Title</PageHeaderTitle>
+        <PageHeaderSubtitle>This is a subtitle</PageHeaderSubtitle>
+        <PageHeaderExtra>
+            <Button>Operation</Button>
+            <Button>Operation</Button>
+            <Button Type="@ButtonType.Primary">Primary</Button>
+        </PageHeaderExtra>
+        <PageHeaderContent>
+            <Descriptions Size="small" Column="3">
+                <DescriptionsItem Title="Created" Span="1">Lili Qu</DescriptionsItem>
+                <DescriptionsItem Title="Association" Span="1"><a>421421</a></DescriptionsItem>
+                <DescriptionsItem Title="Creation Time" Span="1">2017-01-10</DescriptionsItem>
+                <DescriptionsItem Title="Effective Time" Span="1">2017-10-10</DescriptionsItem>
+                <DescriptionsItem Title="Remarks" Span="2">
+                    Gonghu Road, Xihu District, Hangzhou, Zhejiang, China
+                </DescriptionsItem>
+            </Descriptions>
+        </PageHeaderContent>
+    </PageHeader>
+</div>
+<Divider />
+<PageHeader Class="site-page-header" Title="Title" Subtitle="This is a subtitle">
+    <PageHeaderBreadcrumb>
+        <Breadcrumb>
+            <BreadcrumbItem>First-level Menu</BreadcrumbItem>
+            <BreadcrumbItem>
+                <a>Second-level Menu</a>
+            </BreadcrumbItem>
+            <BreadcrumbItem>Third-level Menu</BreadcrumbItem>
+        </Breadcrumb>
+    </PageHeaderBreadcrumb>
+</PageHeader>
+<Divider />
+<PageHeader Class="site-page-header">
+    <!--breadcrumb-->
+    <PageHeaderBreadcrumb>
+        <Breadcrumb>
+            <BreadcrumbItem>First-level Menu</BreadcrumbItem>
+            <BreadcrumbItem>
+                <a>Second-level Menu</a>
+            </BreadcrumbItem>
+            <BreadcrumbItem>Third-level Menu</BreadcrumbItem>
+        </Breadcrumb>
+    </PageHeaderBreadcrumb>
+
+    <!--avatar-->
+    <PageHeaderAvatar>
+        <Avatar Src="https://avatars0.githubusercontent.com/u/22736418?s=88&v=4" />
+    </PageHeaderAvatar>
+    <!--title-->
+    <PageHeaderTitle>Title</PageHeaderTitle>
+
+    <!--subtitle-->
+    <PageHeaderSubtitle>This is a subtitle</PageHeaderSubtitle>
+
+    <!--tags-->
+    <PageHeaderTags>
+        <Tag Color="@PresetColor.Blue.ToString()">Running</Tag>
+    </PageHeaderTags>
+
+    <!--extra-->
+    <PageHeaderExtra>
+        <Button>Operation</Button>
+        <Button>Operation</Button>
+        <Button Type="@ButtonType.Primary">Primary</Button>
+        <Dropdown Placement="@Placement.BottomRight">
+            <Overlay>
+                <Menu>
+                    <MenuItem>
+                        1st menu item
+                    </MenuItem>
+                    <MenuItem>
+                        2nd menu item
+                    </MenuItem>
+                    <MenuItem>
+                        3rd menu item
+                    </MenuItem>
+                </Menu>
+            </Overlay>
+            <ChildContent>
+                <Button><Icon Type="ellipsis" /></Button>
+            </ChildContent>
+        </Dropdown>
+    </PageHeaderExtra>
+
+    <!--content-->
+    <PageHeaderContent>
+        <Row>
+            <div class="pageheader-content">
+                <Paragraph>
+                    Ant Design interprets the color system into two levels: a system-level color system and a product-level color system.
+                </Paragraph>
+                <Paragraph>
+                    Ant Design's design team preferred to design with the HSB color model, which makes it easier for designers to have a clear
+                    psychological expectation of color when adjusting colors, as well as facilitate communication in teams.
+                </Paragraph>
+                <div class="pageheader-content-link">
+                    <a> <img src="https://gw.alipayobjects.com/zos/rmsportal/MjEImQtenlyueSmVEfUD.svg" alt="start" />Quick Start </a>
+                    <a> <img src="https://gw.alipayobjects.com/zos/rmsportal/NbuDUAuBlIApFuDvWiND.svg" alt="info" />Product Info </a>
+                    <a> <img src="https://gw.alipayobjects.com/zos/rmsportal/ohOEPSYdDTNnyMbGuyLb.svg" alt="doc" />Product Doc </a>
+                </div>
+            </div>
+            <div class="pageheader-content-image">
+                <img src="https://gw.alipayobjects.com/zos/antfincdn/K%24NnlsB%26hz/pageHeader.svg" alt="content" />
+            </div>
+        </Row>
+    </PageHeaderContent>
+</PageHeader>
+
+<style>
+    .pageheader-content {
+        flex: 1;
+    }
+
+        .pageheader-content p {
+            margin-bottom: 1em;
+        }
+
+    .pageheader-content-link a {
+        margin-right: 16px;
+    }
+
+    .content-link a img {
+        margin-right: 8px;
+    }
+
+    .pageheader-content-image {
+        margin: 0 0 0 60px;
+        display: flex;
+        align-items: center;
+    }
+
+        .pageheader-content-image img {
+            width: 100%;
+        }
+</style>
+<Divider />
+<PageHeader BackIcon="true" Class="site-page-header">
+    <PageHeaderTitle>Title</PageHeaderTitle>
+    <PageHeaderSubtitle>This is a subtitle</PageHeaderSubtitle>
+    <PageHeaderExtra>
+        <Button>Operation</Button>
+        <Button>Operation</Button>
+        <Button Type="@ButtonType.Primary">Primary</Button>
+    </PageHeaderExtra>
+    <PageHeaderContent>
+        <Descriptions Size="small" Column="3">
+            <DescriptionsItem Title="Created" Span="1">Lili Qu</DescriptionsItem>
+            <DescriptionsItem Title="Association" Span="1"><a>421421</a></DescriptionsItem>
+            <DescriptionsItem Title="Creation Time" Span="1">2017-01-10</DescriptionsItem>
+            <DescriptionsItem Title="Effective Time" Span="1">2017-10-10</DescriptionsItem>
+            <DescriptionsItem Title="Remarks" Span="2">
+                Gonghu Road, Xihu District, Hangzhou, Zhejiang, China
+            </DescriptionsItem>
+        </Descriptions>
+    </PageHeaderContent>
+</PageHeader>
+<br />
+<Divider />
+<PageHeader BackIcon="true">
+    <PageHeaderTitle>Title</PageHeaderTitle>
+    <PageHeaderSubtitle>This is a subtitle</PageHeaderSubtitle>
+    <PageHeaderTags>
+        <Tag Color="@PresetColor.Blue.ToString()">Running</Tag>
+    </PageHeaderTags>
+    <PageHeaderExtra>
+        <Button>Operation</Button>
+        <Button>Operation</Button>
+        <Button Type="@ButtonType.Primary">Primary</Button>
+    </PageHeaderExtra>
+    <PageHeaderContent>
+        <Row Type="flex">
+            <Statistic Title="Status" Value=@("Pending")></Statistic>
+            <Statistic Title="Price" Value="568.08" Prefix="$" Style="margin: 0 32px"></Statistic>
+            <Statistic Title="Balance" Value="3345.08" Prefix="$"></Statistic>
+        </Row>
+    </PageHeaderContent>
+</PageHeader>
+<Divider />
+<PageHeader BackIcon="true" Class="site-page-header">
+    <PageHeaderTitle>Title</PageHeaderTitle>
+    <PageHeaderSubtitle>This is a subtitle</PageHeaderSubtitle>
+    <PageHeaderExtra>
+        <Button>Operation</Button>
+        <Button>Operation</Button>
+        <Button Type="@ButtonType.Primary">Primary</Button>
+    </PageHeaderExtra>
+    <PageHeaderContent>
+        <div class="pageheader-content">
+            <div class="pageheader-main">
+                <Descriptions Size="small" Column="2">
+                    <DescriptionsItem Title="Created" Span="1">Lili Qu</DescriptionsItem>
+                    <DescriptionsItem Title="Association" Span="1"><a>421421</a></DescriptionsItem>
+                    <DescriptionsItem Title="Creation Time" Span="1">2017-01-10</DescriptionsItem>
+                    <DescriptionsItem Title="Effective Time" Span="1">2017-10-10</DescriptionsItem>
+                    <DescriptionsItem Title="Remarks" Span="2">
+                        Gonghu Road, Xihu District, Hangzhou, Zhejiang, China
+                    </DescriptionsItem>
+                </Descriptions>
+            </div>
+            <div class="pageheader-extra">
+                <div>
+                    <Statistic Title="Status" Value="@("Pending")"></Statistic>
+                    <Statistic Title="Price" Value="568.08" Prefix="$" Style="margin: 0 32px"></Statistic>
+                </div>
+            </div>
+        </div>
+    </PageHeaderContent>
+    <PageHeaderFooter>
+        <Tabs DefaultActiveKey="1">
+            <TabPane Key="1">
+                <TabTemplate>Details</TabTemplate>
+            </TabPane>
+            <TabPane Key="2">
+                <TabTemplate>Rule</TabTemplate>
+            </TabPane>
+        </Tabs>
+    </PageHeaderFooter>
+</PageHeader>
+
+<style>
+    .pageheader-content {
+        display: flex;
+    }
+
+    .pageheader-extra div {
+        display: flex;
+        width: max-content;
+        justify-content: flex-end;
+    }
+
+    @@media (max-width: 576px) {
+        .pageheader-content {
+            display: block;
+        }
+
+        .pageheader-main {
+            width: 100%;
+            margin-bottom: 12px;
+        }
+
+        .pageheader-extra {
+            width: 100%;
+            margin-left: 0;
+            text-align: left;
+        }
+    }
+</style>
