@@ -35,4 +35,4 @@ $ dotnet publish -c release -o dist<br>
 [Ant Design Blazor](https://github.com/ant-design-blazor/ant-design-blazor)
 ---
 # 鸣谢
-感谢 [@xiaoMan](https://github.com/ant-design-blazor/ant-design-blazor) 提供的"antb"logo
+感谢 [@xiaoMan](https://github.com/message163) 提供的"antb"logo
