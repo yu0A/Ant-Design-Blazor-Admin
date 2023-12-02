@@ -3,7 +3,7 @@
 
 <Layout>
     <Header Class="header">
-        <div class="logo" />
+        <div class="logo"/>
         <Menu Theme="MenuTheme.Dark" Mode="MenuMode.Horizontal" DefaultSelectedKeys=@(new []{"1"})>
             <MenuItem Key="1" OnClick=GoToAspNet>
                 Asp .Net
@@ -43,11 +43,13 @@
 }
 
 <style>
-    #components-layout-demo-top-side .logo {
-        width: 120px;
-        height: 31px;
-        background: rgba(255, 255, 255, 0.2);
-        margin: 16px 28px 16px 0;
+    .logo {
+        width: 64px;
+        height: 64px; 
+        background: rgba(255, 255, 255, 0.8);
+        background-image: url("./logo/logo.png");
+        background-size: cover;
+        margin: 0px 20px 0px 0px;
         float: left;
     }
 
