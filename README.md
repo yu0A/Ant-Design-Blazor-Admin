@@ -23,9 +23,9 @@ $ dotnet publish -c release -o dist<br>
 以构建和部署Blazor模板代码。
 ---
 # 截图
-![screenshot1](https://github.com/yu0A/Ant-Design-Blazor-Admin/blob/master/Screenshots/screenshot1.png)<br><br>
-![screenshot2](https://github.com/yu0A/Ant-Design-Blazor-Admin/blob/master/Screenshots/screenshot2.png)<br><br>
-![screenshot3](https://github.com/yu0A/Ant-Design-Blazor-Admin/blob/master/Screenshots/screenshot3.png)<br><br>
+![screenshot1](https://github.com/yu0A/Ant-Design-Blazor-Admin/blob/master/Ant-Design-Blazor-Admin/Client/Screenshots/screenshot1.png)<br><br>
+![screenshot2](https://github.com/yu0A/Ant-Design-Blazor-Admin/blob/master/Ant-Design-Blazor-Admin/Client/Screenshots/screenshot2.png)<br><br>
+![screenshot3](https://github.com/yu0A/Ant-Design-Blazor-Admin/blob/master/Ant-Design-Blazor-Admin/Client/Screenshots/screenshot3.png)<br><br>
 ---
 # 开源库链接
 
