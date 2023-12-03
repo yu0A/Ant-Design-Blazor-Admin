@@ -1,0 +1,22 @@
+﻿@code {
+    // Selects
+}
+<EnumSelect TEnum="Province" OnSelectedItemChanged="handleChange" />
+
+@using System.ComponentModel.DataAnnotations
+@code {
+    void handleChange(Province province)
+    {
+        Console.WriteLine(province);
+    }
+
+    public enum Province
+    {
+        [Display(Name = "❤️Shanghai")]
+        Shanghai,
+
+        Zhejiang,
+
+        Jiangsu
+    }
+}
