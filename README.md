@@ -6,7 +6,7 @@
 ---
 我最近发现，用Blazor全栈开发WebAPP的速度非常快，甚至比PHP还快。Blazor和PHP的设计思想类似，可以将每一个razor文件看做是一个网页、一个类库或者一个css，或者三者的组合体。推荐用PHP的朋友来试试这套Blazor代码，绝对不会让你们失望。<br><br>
 而且，互操作是.NET的一大亮点。Blazor也支持JSInterop和JS代码互操作，所以偏前端的开发者也可以多写JS模块，然后在razor代码里面用JSInterop调JS函数。<br><br>
-对于前端开发者而言，Blazor非常适合开发SPA应用。Blazor在发ajax、数据操作和管理组件等场景中非常方便，还支持丰富的组件库，推荐一试。
+对于（纯）前端开发者而言，Blazor非常适合开发SPA应用。Blazor在发ajax、数据操作和管理组件等场景中非常方便，还支持丰富的组件库，推荐一试。
 ---
 # 安装依赖
 安装[.Net 7.0](https://dotnet.microsoft.com/en-us/download/dotnet/7.0)<br>.Net 7.0+Blazor的已知bug也不少，如果不追求稳定性的话，那么更建议用.Net 8.0 Preview。<br><br>
