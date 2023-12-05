@@ -3,7 +3,7 @@
 
 <Layout>
     <Header Class="header">
-        <div class="logo"/>
+        <div class="logo" @onclick=GoToGitHubPage/>
         <Menu Theme="MenuTheme.Dark" Mode="MenuMode.Horizontal" DefaultSelectedKeys=@(new []{""})>
             <MenuItem Key="1" OnClick=GoToAspNet>
                 Asp .Net
@@ -27,7 +27,11 @@
     <Footer Style="text-align: center; ">Ant Design Blazor Admin ©2023 yuhongbo</Footer>
 </Layout>
 
-@code{
+@code {
+    private async Task GoToGitHubPage()
+    {
+        await JSRuntime.InvokeVoidAsync("exportJsFunctions.GoToGitHubPage");
+    }
     private async Task GoToAspNet()
     {
         await JSRuntime.InvokeVoidAsync("exportJsFunctions.GoToAspNet");
@@ -51,6 +55,7 @@
         background-size: cover;
         margin: 0px 20px 0px 0px;
         float: left;
+        cursor: pointer;
     }
 
     .site-layout-background {

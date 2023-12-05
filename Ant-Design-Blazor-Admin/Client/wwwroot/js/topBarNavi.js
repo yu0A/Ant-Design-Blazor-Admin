@@ -1,4 +1,7 @@
 window.exportJsFunctions = {
+    GoToGitHubPage: function () {
+        window.open('https://github.com/yu0A/Ant-Design-Blazor-Admin', '_blank');
+    },
     GoToAspNet: function () {
         window.open('https://docs.microsoft.com/aspnet/', '_blank');
     },
