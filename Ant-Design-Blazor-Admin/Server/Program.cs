@@ -11,6 +11,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages();
 builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGenNewtonsoftSupport();
 builder.Services.AddControllers().AddNewtonsoftJson();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddCors(options => options.AddPolicy("ÔÊÐí¿çÓò", policy => policy.AllowAnyOrigin()));
@@ -45,6 +46,8 @@ string version = "v1";
 app.UseSwaggerUI(c =>
 {
     c.SwaggerEndpoint($"/swagger/{version}/swagger.json", version);
+    c.EnableDeepLinking();
+    c.EnableFilter();
 });
 app.UseCors(builder =>
 {

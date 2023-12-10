@@ -2,12 +2,17 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System.Dynamic;
 
 namespace BlazorServerApp.Controllers
 {
-    /// <summary>-
+    /// <summary>
+    /// Test
     /// </summary>
+    /// <param name="retcode">返回码</param>
+    /// <param name="data">返回的数据</param>
+    /// <param name="text">返回的描述文字</param>
     /// [ApiController]
     [Tags("Test")]
     [Route("[controller]/[action]")]
@@ -15,17 +20,25 @@ namespace BlazorServerApp.Controllers
     public class TestController : BaseController
     {
         [HttpGet]
-        public IActionResult Test(string id)
+        public JObject Test(string id)
         {
+            JObject j = new JObject();
+            JObject data = new JObject();
+            j["retcode"] = 0;
+            j["data"] = data;
+            j["text"] = null;
             try
             {
-                return Ok(id);
+                j["retcode"] = 0;
+                j["text"] = "Success";
+                data["id"] = id;
             }
             catch (Exception ex)
             {
-                return NotFound(id);
+                j["retcode"] = 1;
+                j["text"] = JsonConvert.DeserializeObject<JToken>(JsonConvert.SerializeObject(ex));
             }
-            return Redirect(id);
+            return j;
         }
     }
 }
