@@ -1,0 +1,26 @@
+﻿@code {
+    // Images
+}
+<Space Size=@("12px")>
+    <SpaceItem>
+        <Image Width="200px" Src="./logo/logo.png">
+            <Placeholder>
+                <Image Preview="false" Src="./logo/logo.png" Width="200px" />
+            </Placeholder>
+        </Image>
+    </SpaceItem>
+    <SpaceItem>
+        <Button Type="primary" OnClick="SetRandom">
+            Reload
+        </Button>
+    </SpaceItem>
+</Space>
+
+@code {
+    long random;
+
+    private void SetRandom()
+    {
+        random = DateTime.Now.Ticks;
+    }
+}

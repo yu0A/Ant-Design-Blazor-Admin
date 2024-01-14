@@ -1,0 +1,21 @@
+﻿@code {
+    // Images
+}
+<div>
+	<Image PreviewVisible="false"
+		   Width="200"
+		   Src="./logo/logo.png"
+		   OnClick="@(() => { visible = true; })" />
+	<div style="display:none;">
+		<ImagePreviewGroup @bind-PreviewVisible="visible">
+			<Image Src="./logo/logo.png" />
+			<Image Src="./logo/logo.png" />
+			<Image Src="./logo/logo.png" />
+		</ImagePreviewGroup>
+	</div>
+</div>
+
+
+@code {
+	bool visible;
+}

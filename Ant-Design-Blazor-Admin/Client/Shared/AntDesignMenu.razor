@@ -1,6 +1,6 @@
 ﻿<Menu Style="width: 256px;"
       DefaultSelectedKeys=@(new[] { "1" })
-      DefaultOpenKeys=@(new[] { "sub0","sub1","sub2","sub3","sub4" })
+      DefaultOpenKeys=@(new[] { "sub0","sub1","sub2","sub3","sub4","sub5" })
       Mode=@MenuMode.Inline>
     <SubMenu Key="sub0" TitleTemplate=@sub0Title>
         <MenuItem RouterLink="/" RouterMatch="NavLinkMatch.All">Index</MenuItem>
@@ -53,6 +53,31 @@
             
         </MenuItemGroup>
     </SubMenu>
+    <SubMenu Key="sub5" TitleTemplate=@sub5Title>
+        <MenuItemGroup Key="g5" Title="Components">
+            <MenuItem RouterLink="/Avatars" RouterMatch="NavLinkMatch.All">Avatars</MenuItem>
+            <MenuItem RouterLink="/Badges" RouterMatch="NavLinkMatch.All">Badges</MenuItem>
+            <MenuItem RouterLink="/Calendars" RouterMatch="NavLinkMatch.All">Calendars</MenuItem>
+            <MenuItem RouterLink="/Cards" RouterMatch="NavLinkMatch.All">Cards</MenuItem>
+            <MenuItem RouterLink="/Carousels" RouterMatch="NavLinkMatch.All">Carousels</MenuItem>
+            <MenuItem RouterLink="/Collapses" RouterMatch="NavLinkMatch.All">Collapses</MenuItem>
+            <MenuItem RouterLink="/Comments" RouterMatch="NavLinkMatch.All">Comments</MenuItem>
+            <MenuItem RouterLink="/Descriptionss" RouterMatch="NavLinkMatch.All">Descriptionss</MenuItem>
+            <MenuItem RouterLink="/Emptys" RouterMatch="NavLinkMatch.All">Emptys</MenuItem>
+            <MenuItem RouterLink="/Images" RouterMatch="NavLinkMatch.All">Images</MenuItem>
+            <MenuItem RouterLink="/Lists" RouterMatch="NavLinkMatch.All">Lists</MenuItem>
+            <MenuItem RouterLink="/Popovers" RouterMatch="NavLinkMatch.All">Popovers</MenuItem>
+            <MenuItem RouterLink="/Segmenteds" RouterMatch="NavLinkMatch.All">Segmenteds</MenuItem>
+            <MenuItem RouterLink="/Statistics" RouterMatch="NavLinkMatch.All">Statistics</MenuItem>
+            <MenuItem RouterLink="/Tables" RouterMatch="NavLinkMatch.All">Tables</MenuItem>
+            <MenuItem RouterLink="/Tabss" RouterMatch="NavLinkMatch.All">Tabss</MenuItem>
+            <MenuItem RouterLink="/Tags" RouterMatch="NavLinkMatch.All">Tags</MenuItem>
+            <MenuItem RouterLink="/Timelines" RouterMatch="NavLinkMatch.All">Timelines</MenuItem>
+            <MenuItem RouterLink="/Tooltips" RouterMatch="NavLinkMatch.All">Tooltips</MenuItem>
+            <MenuItem RouterLink="/Trees" RouterMatch="NavLinkMatch.All">Trees</MenuItem>
+
+        </MenuItemGroup>
+    </SubMenu>
 
 </Menu>
 
@@ -82,5 +107,10 @@
     @<span>
         <Icon Type="snippets" Theme="outline" />
         <span>Data Input</span>
+    </span>;
+    RenderFragment sub5Title =
+    @<span>
+        <Icon Type="snippets" Theme="outline" />
+        <span>ShowData</span>
     </span>;
 }
